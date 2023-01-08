@@ -1,0 +1,28 @@
+name: Sample Action
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  sample_action:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout repo
+      - uses: actions/checkout@v3
+
+      - name: Set up Python 3.10.0
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10.0"
+
+      - name: Echo 1
+        run: echo "Echo 1"
+
+      - name: Echo 2
+        run: |
+          echo "Echo 2a"
+          echo "Echo 2b"
